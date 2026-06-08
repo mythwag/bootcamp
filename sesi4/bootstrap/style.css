@@ -1,0 +1,188 @@
+:root{
+    --primary:#FD6F00;
+    --dark:#1E1E1E;
+    --transition:all .3s ease;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    transition:.3s;
+}
+
+.nav-link{
+    position:relative;
+    font-weight:500;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:var(--primary);
+    transition:.3s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* BUTTON */
+
+.btn-warning{
+    transition:var(--transition);
+}
+
+.btn-warning:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(253,111,0,.25);
+}
+
+/* HERO */
+
+.hero-image{
+    transition:.4s;
+}
+
+.hero-image:hover{
+    transform:scale(1.03);
+}
+
+/* SOCIAL */
+
+.social-link{
+    transition:.3s;
+}
+
+.social-link:hover{
+    color:var(--primary)!important;
+    transform:translateY(-3px);
+}
+
+/* ABOUT CARD */
+
+.card{
+    transition:var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.1)!important;
+}
+
+/* PROJECT IMAGE */
+
+.project-image{
+    overflow:hidden;
+}
+
+.project-image img{
+    transition:.4s;
+}
+
+.project-image:hover img{
+    transform:scale(1.08);
+}
+
+/* FILTER BUTTON */
+
+.btn-outline-secondary{
+    transition:.3s;
+}
+
+.btn-outline-secondary:hover{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:white;
+}
+
+/* MODAL */
+
+.modal-content{
+    border:none;
+    border-radius:20px;
+}
+
+/* CONTACT */
+
+.form-control{
+    transition:.3s;
+}
+
+.form-control:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 .25rem rgba(253,111,0,.15);
+}
+
+/* FOOTER */
+
+footer a{
+    transition:.3s;
+}
+
+footer a:hover{
+    color:var(--primary)!important;
+}
+
+@media (max-width: 991px){
+
+    .navbar-nav{
+        text-align:center;
+        padding:20px 0;
+    }
+
+    .navbar .btn{
+        width:100%;
+        margin-top:10px;
+    }
+
+    #home{
+        padding-top:120px;
+    }
+
+    .display-1{
+        font-size:3rem;
+    }
+
+    .hero-image{
+        max-width:280px !important;
+        margin-bottom:30px;
+    }
+
+}
+
+@media (max-width: 576px){
+
+    .display-1{
+        font-size:2.5rem;
+        line-height:1.1;
+    }
+
+    h2{
+        font-size:2rem;
+    }
+
+    .card{
+        margin-bottom:15px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .social-link{
+        font-size:20px;
+    }
+
+}
