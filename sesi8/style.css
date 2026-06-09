@@ -1,0 +1,252 @@
+:root {
+    --primary-color: #5e17eb; /* Modern Purple */
+    --accent-color: #ff4757;
+    --body-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-dark: #2d3436;
+    --text-muted: #636e72;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+}
+
+/* --- Pembungkus Halaman Utama (Mencegah Mepet Layar) --- */
+.container {
+    max-width: 1200px; /* Batas lebar ideal di desktop */
+    padding-left: 24px;  /* Jarak aman tepi kiri */
+    padding-right: 24px; /* Jarak aman tepi kanan */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    padding: 80px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: -40px;
+}
+
+/* --- Toolbar Filter (Versi Kecil & Rapi) --- */
+.toolbar-container {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 15px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+/* Tinggi seragam komponen mini (38px) */
+.search-input-group, 
+.category-select, 
+.btn-filter {
+    height: 38px; 
+}
+
+/* Input Pencarian */
+.search-input-group {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1.5px solid #e1e8ed;
+    transition: all 0.2s ease;
+}
+
+.search-input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(94, 23, 235, 0.12);
+}
+
+.search-input-group .form-control {
+    border: none;
+    font-size: 0.85rem;
+    padding-left: 12px;
+    background: transparent;
+}
+
+.search-input-group .form-control:focus {
+    box-shadow: none;
+}
+
+.search-input-group .input-group-text {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding-right: 12px;
+}
+
+/* Dropdown / Select Kategori */
+.category-select {
+    border-radius: 8px;
+    border: 1.5px solid #e1e8ed;
+    font-size: 0.85rem;
+    padding-left: 12px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.category-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(94, 23, 235, 0.12) !important;
+}
+
+/* Tombol Filter Berwarna Ungu Gradasi */
+.btn-filter {
+    min-width: 95px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7d42fa 100%);
+    color: white;
+    font-weight: 500;
+    font-size: 0.85rem;
+    border: none;
+    box-shadow: 0 3px 10px rgba(94, 23, 235, 0.15);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-filter:hover {
+    background: linear-gradient(135deg, #4c10c4 0%, #682be3 100%);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* --- Product Grid & Card --- */
+#productGrid {
+    padding: 15px 0;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.card-img-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(94, 23, 235, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.product-card:hover .img-overlay {
+    opacity: 1;
+}
+
+.price-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 3;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.kategori-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    height: 2.4em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.deskripsi-produk {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 3.6em;
+}
+
+.btn-detail {
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+    padding: 6px 0;
+}
+
+.btn-detail:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(94, 23, 235, 0.2);
+}
+
+/* Responsif Layar HP */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .hero-section {
+        padding: 60px 0;
+        border-radius: 0 0 30px 30px;
+    }
+}
